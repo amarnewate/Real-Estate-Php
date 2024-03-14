@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Number Validation</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.8.16/libphonenumber-js.min.js"></script>
+<style>
+    .error-message {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<h2>Phone Number Validation</h2>
+
+<!-- Phone number input -->
+<select id="country">
+    <option value="US">United States</option>
+    <option value="IN">India</option>
+    <!-- Add more country options as needed -->
+</select>
+<input type="text" id="phone" placeholder="Enter your phone number">
+<span id="phone-error" class="error-message"></span>
+
+<script>
+    var input = document.getElementById('phone');
+    var countrySelect = document.getElementById('country');
+    var errorSpan = document.getElementById('phone-error');
+
+    input.addEventListener('blur', function(event) {
+        validatePhoneNumber();
+    });
+
+    countrySelect.addEventListener('change', function(event) {
+        updateCountryCode();
+        validatePhoneNumber();
+    });
+
+    function updateCountryCode() {
+        var country = countrySelect.value;
+        var countryCodePrefix = getCountryCodePrefix(country);
+        input.value = countryCodePrefix; // Set the input value to the country code prefix
+    }
+
+    function getCountryCodePrefix(country) {
+        var phoneNumberUtil = window.libphonenumber.PhoneNumberUtil.getInstance();
+        var exampleNumber = phoneNumberUtil.getExampleNumberForType(country, phoneNumberUtil.PhoneNumberType.MOBILE);
+        var countryCodePrefix = exampleNumber.getCountryCode().toString();
+        return "+" + countryCodePrefix;
+    }
+
+    function validatePhoneNumber() {
+        var phoneNumber = input.value;
+        var country = countrySelect.value;
+        var isValid = false;
+
+        try {
+            var phoneNumberUtil = window.libphonenumber.PhoneNumberUtil.getInstance();
+            var phoneNumberObject = phoneNumberUtil.parseAndKeepRawInput(phoneNumber, country);
+            isValid = phoneNumberUtil.isValidNumber(phoneNumberObject); // Check if the number is valid
+        } catch (e) {
+            console.error(e);
+        }
+
+        if (!isValid) {
+            errorSpan.textContent = "Please enter a valid phone number for the selected country.";
+        } else {
+            errorSpan.textContent = "";
+        }
+    }const contact_asset = "2022032034"
+const phoneNumber = libphonenumber.parsePhoneNumber(contact_asset, 'US')
+
+if (phoneNumber) {
+  console.log(phoneNumber.isPossible());
+}
+</script>
+
+</body>
+</html>
