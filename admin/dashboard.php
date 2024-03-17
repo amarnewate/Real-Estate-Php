@@ -184,6 +184,9 @@ if ($result) {
 							<canvas id="chart" width="400" height="200"></canvas>
 
 
+							
+
+
 
 						</div>
 					</div>
@@ -210,7 +213,7 @@ if ($result) {
 
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
-		
+
 
     </body>
 
