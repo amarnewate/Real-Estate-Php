@@ -176,7 +176,6 @@ if ($result) {
 							<!-- Sales Chart -->
 							<div id="chart"></div>
 
-							<!-- /Sales Chart -->
 
 						</div>
 						<div class="col-md-12 col-lg-6">
@@ -184,7 +183,7 @@ if ($result) {
 							<!-- Invoice Chart -->
 							<canvas id="chart" width="400" height="200"></canvas>
 
-							<!-- /Invoice Chart -->
+							
 
 						</div>
 					</div>
