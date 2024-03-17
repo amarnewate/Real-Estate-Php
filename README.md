@@ -2,7 +2,7 @@
 
 
 
-Realestate Management system
+Real Estate Management system
 
 This is a ready to use web application for managing Real Estate System. the application is built on PHP and Mysql, its interface is very user friendly.
 
@@ -26,4 +26,4 @@ It can easily be used to manage two different group of users with different perm
 
 Import the Database in Your Server like Xampp, Wamp
 
-Database Name -: #######
+Database Name -: developer
