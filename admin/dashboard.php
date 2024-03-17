@@ -139,7 +139,7 @@ if ($result) {
 
 										<h3><?php echo $totalPurchases;?></h3>
 
-										<h6 class="text-muted">Total Property Purchased</h6>
+										<h6 class="text-muted">Total Property Sold</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-danger w-50"></div>
 										</div>
@@ -174,28 +174,16 @@ if ($result) {
 						<div class="col-md-12 col-lg-6">
 
 							<!-- Sales Chart -->
-							<div class="card card-chart">
-								<div class="card-header">
-									<h4 class="card-title">Sales Overview</h4>
-								</div>
-								<div class="card-body">
-									<div id="morrisArea"></div>
-								</div>
-							</div>
+							<div id="chart"></div>
+
 							<!-- /Sales Chart -->
 
 						</div>
 						<div class="col-md-12 col-lg-6">
 
 							<!-- Invoice Chart -->
-							<div class="card card-chart">
-								<div class="card-header">
-									<h4 class="card-title">Order Status</h4>
-								</div>
-								<div class="card-body">
-									<div id="morrisLine"></div>
-								</div>
-							</div>
+							<canvas id="chart" width="400" height="200"></canvas>
+
 							<!-- /Invoice Chart -->
 
 						</div>
@@ -223,6 +211,28 @@ if ($result) {
 
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
+		<script>
+    // Fetch data from PHP
+    var totalUsers = <?php echo $totalUsers; ?>;
+    var totalRequests = <?php echo $totalRequests; ?>;
+    var totalPurchases = <?php echo $totalPurchases; ?>;
+    var totalProperty = <?php echo $totalProperty; ?>;
+
+    // Render Morris chart
+    new Morris.Bar({
+        element: 'chart',
+        data: [
+            { y: 'Total Users', a: totalUsers },
+            { y: 'Total Requests', a: totalRequests },
+            { y: 'Total Purchases', a: totalPurchases },
+            { y: 'Total Properties', a: totalProperty }
+        ],
+        xkey: 'y',
+        ykeys: ['a'],
+        labels: ['Value']
+    });
+</script>
+
 
     </body>
 
