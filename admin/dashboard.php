@@ -183,7 +183,7 @@ if ($result) {
 							<!-- Invoice Chart -->
 							<canvas id="chart" width="400" height="200"></canvas>
 
-							
+
 
 						</div>
 					</div>
@@ -210,28 +210,7 @@ if ($result) {
 
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
-		<script>
-    // Fetch data from PHP
-    var totalUsers = <?php echo $totalUsers; ?>;
-    var totalRequests = <?php echo $totalRequests; ?>;
-    var totalPurchases = <?php echo $totalPurchases; ?>;
-    var totalProperty = <?php echo $totalProperty; ?>;
-
-    // Render Morris chart
-    new Morris.Bar({
-        element: 'chart',
-        data: [
-            { y: 'Total Users', a: totalUsers },
-            { y: 'Total Requests', a: totalRequests },
-            { y: 'Total Purchases', a: totalPurchases },
-            { y: 'Total Properties', a: totalProperty }
-        ],
-        xkey: 'y',
-        ykeys: ['a'],
-        labels: ['Value']
-    });
-</script>
-
+		
 
     </body>
 
