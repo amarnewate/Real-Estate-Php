@@ -1,12 +1,14 @@
 <?php
 include("config.php");
 
-// Check if the user is logged in and retrieve their user ID
+
 session_start();
-if (!isset($_SESSION['uid'])) {
+if (!isset($_SESSION['auser'])) {
+    header("location:index.php");
+}
+if (isset($_SESSION['uid'])) {
     // Redirect to the login page or display an error message
-    header("Location: login.php");
-    exit();
+
 }
 
 // Retrieve all property requests
@@ -42,7 +44,7 @@ mysqli_close($con);
     <title>All Property Requests</title>
     <style>
         /* Your CSS styles here */
-        <style>
+
         /* Your CSS styles here */
         body {
     font-family: Arial, sans-serif;
@@ -94,7 +96,7 @@ tbody tr:hover {
 }
 
 .action-button {
-    background: linear-gradient(to right, red, green, blue);
+    background:forestgreen;
     color: #fff;
     border: 2px solid transparent;
     padding: 8px 16px;
@@ -153,7 +155,7 @@ tbody tr:hover {
             $phoneWithoutLastWord = rtrim($row["requester_phone"], " $lastWordPhone");
             $maskedPhone = $phoneWithoutLastWord . str_repeat("*", strlen($lastWordPhone));
 
-    
+
 
             echo "<tr>";
             echo "<td>" . $row["pid"] . "</td>";
@@ -164,7 +166,7 @@ tbody tr:hover {
             echo "<td>" . $row["owner_name"] . "</td>";
             echo "<td>" . $row["owner_email"] . "</td>";
             echo "<td>" . $row["owner_phone"] . "</td>";
-            echo "<td><button class='action-button' data-property-id='" . $row["pid"] . "' data-current-status='" . $row["status"] . "' onclick='updateStatus(this)'>" . ($row["status"] === "Available" ? "Available" : "Unavailable") . "</button></td>";
+            echo "<td><button class='action-button' data-property-id='" . $row["pid"] . "' data-current-status='" . $row["status"] . "' onclick='updateStatus(this)'>" . ($row["status"] === "Available" ? "Available" : "SoldOut") . "</button></td>";
             echo "</tr>";
         }
         echo "</table>";

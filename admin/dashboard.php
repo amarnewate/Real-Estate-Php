@@ -184,9 +184,6 @@ if ($result) {
 							<canvas id="chart" width="400" height="200"></canvas>
 
 
-							
-
-
 
 						</div>
 					</div>
