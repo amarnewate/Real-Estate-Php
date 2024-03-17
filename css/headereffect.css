@@ -1,0 +1,27 @@
+body .container{
+     background: linear-gradient(to right, red,green,blue);
+     color: #f70606;
+     border: 2px solid transparent; /* Initial transparent border */
+     padding: 8px 16px;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: border-color 0.3s ease;
+     background-size: 200% auto;
+     animation: gradientBGMove 2s linear infinite, rotateBorder 3s linear infinite; /* Animation for gradient background and rotating border */
+ } @keyframes gradientBGMove {
+     0% {
+         background-position: 0% 50%;
+     }
+     100% {
+         background-position: 100% 50%;
+     }
+ }
+
+ @keyframes rotateBorder {
+     0% {
+         border-color: #007bff; /* Initial border color */
+     }
+     100% {
+         border-color: #0056b3; /* Final border color */
+     }
+ }
