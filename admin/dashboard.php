@@ -1,8 +1,6 @@
 <?php
 session_start();
 require("config.php");
-////code
-
 if(!isset($_SESSION['auser']))
 {
 	header("location:index.php");
@@ -12,9 +10,7 @@ $sql = "SELECT
             (SELECT COUNT(*) FROM purchase_property) AS total_purchases,
 		  (SELECT COUNT(*) FROM property ) AS total_properties,
             (SELECT COUNT(*) FROM property_requests) AS total_requests";
-
 $result = $con->query($sql);
-
 if ($result) {
     $row = $result->fetch_assoc();
     $totalUsers = $row['total_users'];
@@ -27,7 +23,6 @@ if ($result) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -56,19 +51,13 @@ if ($result) {
 		<![endif]-->
     </head>
     <body>
-
 		<!-- Main Wrapper -->
-
-
 			<!-- Header -->
 				<?php include("header.php"); ?>
 			<!-- /Header -->
-
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
-
                 <div class="content container-fluid">
-
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
@@ -91,7 +80,6 @@ if ($result) {
 										<span class="dash-widget-icon bg-primary">
 											<i class="fe fe-users"></i>
 										</span>
-
 									</div>
 									<div class="dash-widget-info">
 
@@ -112,7 +100,6 @@ if ($result) {
 										<span class="dash-widget-icon bg-success">
 											<i class="fe fe-users"></i>
 										</span>
-
 									</div>
 									<div class="dash-widget-info">
 
@@ -133,7 +120,6 @@ if ($result) {
 										<span class="dash-widget-icon bg-danger">
 											<i class="fe fe-users"></i>
 										</span>
-
 									</div>
 									<div class="dash-widget-info">
 
@@ -154,7 +140,6 @@ if ($result) {
 										<span class="dash-widget-icon bg-warning">
 											<i class="fe fe-users"></i>
 										</span>
-
 									</div>
 									<div class="dash-widget-info">
 
@@ -175,43 +160,28 @@ if ($result) {
 
 							<!-- Sales Chart -->
 							<div id="chart"></div>
-
-
 						</div>
 						<div class="col-md-12 col-lg-6">
 
 							<!-- Invoice Chart -->
 							<canvas id="chart" width="400" height="200"></canvas>
-
-
-
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- /Page Wrapper -->
-
-
 		<!-- /Main Wrapper -->
-
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
-
 		<!-- Bootstrap Core JS -->
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
-
 		<!-- Slimscroll JS -->
         <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
 		<script src="assets/plugins/raphael/raphael.min.js"></script>
 		<script src="assets/plugins/morris/morris.min.js"></script>
 		<script src="assets/js/chart.morris.js"></script>
-
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
-
-
     </body>
-
 </html>
