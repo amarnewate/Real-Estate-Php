@@ -5,52 +5,48 @@ $error="";
 $msg="";
 if(isset($_REQUEST['login']))
 {
-    $email=$_REQUEST['email'];
-    $pass=$_REQUEST['pass'];
-    if(!empty($email) && !empty($pass))
-    {
-        // Fetch the user record based on the provided email
-        $sql = "SELECT * FROM user where uemail='$email'";
-        $result=mysqli_query($con, $sql);
-        $row=mysqli_fetch_array($result);
+	$email=$_REQUEST['email'];
+	$pass=$_REQUEST['pass'];
 
-        if($row){
-            // Verify the password
-            if(password_verify($pass, $row['upass'])){
-                // Password is correct, set session variables and redirect
-                $_SESSION['uid']=$row['uid'];
-                $_SESSION['uemail']=$email;
-                header("location:index.php");
-            } else {
-                // Password is incorrect
-                $error = "<p class='alert alert-warning'>Incorrect email or password</p> ";
-            }
-        }
-        else{
-            // No user found with the provided email
-            $error = "<p class='alert alert-warning'>Incorrect email or password</p> ";
-        }
-    }else{
-        // Empty fields error
-        $error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
-    }
+
+	if(!empty($email) && !empty($pass))
+	{
+		$sql = "SELECT * FROM user where uemail='$email' && upass='$pass'";
+		$result=mysqli_query($con, $sql);
+		$row=mysqli_fetch_array($result);
+		   if($row){
+
+				$_SESSION['uid']=$row['uid'];
+				$_SESSION['uemail']=$email;
+				header("location:index.php");
+
+		   }
+		   else{
+			   $error = "<p class='alert alert-warning'>Login Not Successfully</p> ";
+		   }
+	}else{
+		$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
+	}
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <!-- Meta Tags -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="images/favicon.ico">
+
 <!--	Fonts
 	========================================================-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -63,11 +59,13 @@ if(isset($_REQUEST['login']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
+
 <!--	Title
 	=========================================================-->
 <title>Homex - Real Estate Template</title>
 </head>
 <body>
+
 <!--	Page Loader
 =============================================================
 <div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
@@ -78,11 +76,14 @@ if(isset($_REQUEST['login']))
 	</div>
 </div>
 -->
+
+
 <div id="page-wrapper">
     <div class="row">
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
+
         <!--	Banner   --->
         <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
             <div class="container">
@@ -102,6 +103,9 @@ if(isset($_REQUEST['login']))
             </div>
         </div>
          <!--	Banner   --->
+
+
+
         <div class="page-wrappers login-body full-row bg-gray">
             <div class="login-wrapper">
             	<div class="container">
@@ -130,11 +134,16 @@ if(isset($_REQUEST['login']))
             <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="color:white;">Forgot Password</a>
             <!-- onclick="forgotpassword()" -->
         </form>
+
 								<div class="login-or">
 									<span class="or-line"></span>
 									<span class="span-or">or</span>
 								</div>
+
+
+
 								<div class="text-center dont-have">Don't have an account? <a href="register.php">Register</a></div>
+
 							</div>
                         </div>
                     </div>
@@ -142,19 +151,24 @@ if(isset($_REQUEST['login']))
             </div>
         </div>
 	<!--	login  -->
+
+
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
+
         <!-- Scroll to top -->
         <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
         <!-- End Scroll To top -->
     </div>
 </div>
 <!-- Wrapper End -->
+
 <script>
     document.getElementById('togglePassword').addEventListener('click', function() {
         var passwordField = document.getElementById('password');
         var icon = document.querySelector('#togglePassword i');
+
         // Toggle the type attribute
         if (passwordField.type === 'password') {
             passwordField.type = 'text';
@@ -178,6 +192,7 @@ if(isset($_REQUEST['login']))
         </button>
       </div>
       <div class="modal-body">
+
         <form method="post">
 			<div class="form-group">
 				<input type="email"  name="forgotpass" id="forgotpass" class="form-control" placeholder="Enter Your Email*">
@@ -185,17 +200,20 @@ if(isset($_REQUEST['login']))
 			<div class="form-group d-none" id="npasstext">
 				<input type="type"  name="newpass" id="newpass" class="form-control" placeholder="Enter Your Password*">
 			</div>
+
 		</form>
       </div>
       <div class="modal-footer">
       	<button type="button" class="btn btn-primary" onclick="forgotpassword()" id="upd_btn">Update</button>
       	<button type="button" class="btn btn-primary d-none" onclick="change_password()" id="cha_btn">Change Password</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
       </div>
     </div>
   </div>
 </div>
 <!-- model end -->
+
 <!--	Js Link
 ============================================================-->
 <script src="js/jquery.min.js"></script>
@@ -215,6 +233,7 @@ if(isset($_REQUEST['login']))
 <script src="js/custom.js"></script>
 <script type="text/javascript">
 	// $( document ).ready(function() {
+
     function forgotpassword() {
     	// alert('hiii')
 		var emailid=$("#forgotpass").val();
@@ -234,17 +253,23 @@ if(isset($_REQUEST['login']))
 	            }
     	});
    // return resultobj;
+
     	console.log('resultobj',resultobj)
+
     	if (resultobj['code']==200) {
     		// alert('yes')
     		$('#forgotpass').prop('readonly', true);
     		 $("#npasstext").addClass('d-block').siblings().removeClass('d-none');
     		 $("#upd_btn").hide()
     		 $("#cha_btn").addClass('d-block').siblings().removeClass('d-none');
+
     	}else{
     		alert('something went wrong! check your email id')
     	}
+
+
     }
+
     function change_password() {
     	// alert('change_password'):
     	var emailid=$("#forgotpass").val();
@@ -263,8 +288,11 @@ if(isset($_REQUEST['login']))
 	               alert('error');
 	            }
     	});
+
     	console.log('resultobj--change passowrd',resultobj)
     	if (resultobj['code']==200) {
+
+
     		location.reload();
     		$('#exampleModal').modal('hide');
     		alert('User Password has been changes successfully!')
