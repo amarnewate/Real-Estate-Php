@@ -1,19 +1,14 @@
 <?php
 include("config.php");
 require 'vendor/autoload.php';
-
 use libphonenumber\PhoneNumberUtil;
-
 // Initialize PhoneNumberUtil
 $phoneUtil = PhoneNumberUtil::getInstance();
 $arrRegions = $phoneUtil->getSupportedRegions();
-
 // Define error and message variables
 $error = "";
 $msg = "";
-
 // Check if form is submitted
-
 if (isset($_POST['reg'])) {
     // Check if the country code is selected
     if (empty($_POST['country'])) {
@@ -27,10 +22,8 @@ if (isset($_POST['reg'])) {
         $error = "";
         // Parse the phone number
         $numberProto = $phoneUtil->parse($phoneWithCountryCode, $defaultRegion);
-
         // Validate the phone number
         $isValid = $phoneUtil->isValidNumber($numberProto);
-
         // Check if the phone number is valid
         if (!$isValid) {
             // If number is not valid, set error message and prevent form submission
@@ -45,14 +38,11 @@ if (isset($_POST['reg'])) {
             $address = $_REQUEST['address'];
             $pass = $_REQUEST['pass'];
             $utype = $_REQUEST['utype'];
-
             $uimage = $_FILES['uimage']['name'];
             $temp_name1 = $_FILES['uimage']['tmp_name'];
-
             $query = "SELECT * FROM user where uemail='$email' AND uphone='$phone'";
             $res = mysqli_query($con, $query);
             $num = mysqli_num_rows($res);
-
             if ($num == 1) {
                 $error = "<p class='alert alert-warning'>Email Id or Phone Number already Exist</p> ";
             } else {
@@ -60,7 +50,6 @@ if (isset($_POST['reg'])) {
                     $sql = "INSERT INTO user (uname,uemail,uphone,uaddress,upass,utype,uimage) VALUES ('$name','$email','$phone','$address','$pass','$utype','$uimage')";
                     $result = mysqli_query($con, $sql);
                     move_uploaded_file($temp_name1, "admin/user/$uimage");
-
                     if ($result) {
                         $msg = "<p class='alert alert-success'>Register Successfully</p> ";
                         // JavaScript code to redirect after 3 seconds
@@ -85,22 +74,18 @@ if (isset($_POST['reg'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Meta Tags -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="images/favicon.ico">
-
     <!--	Fonts
 	========================================================-->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
     <!--	Css Link
 	========================================================-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -121,7 +106,6 @@ if (isset($_POST['reg'])) {
             font-size: 10px;
             z-index: 2;
         }
-
         #phone {
             width: 63%;
             display: flex;
@@ -134,9 +118,7 @@ if (isset($_POST['reg'])) {
 	=========================================================-->
     <title>Homex - Real Estate Template</title>
 </head>
-
 <body>
-
     <!--	Page Loader
 =============================================================
 <div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
@@ -147,14 +129,11 @@ if (isset($_POST['reg'])) {
 	</div>
 </div>
 -->
-
-
     <div id="page-wrapper">
         <div class="row">
             <!--	Header start  -->
             <?php include("include/header.php"); ?>
             <!--	Header end  -->
-
             <!--	Banner   --->
             <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
                 <div class="container">
@@ -174,9 +153,6 @@ if (isset($_POST['reg'])) {
                 </div>
             </div>
             <!--	Banner   --->
-
-
-
             <div class="page-wrappers login-body full-row bg-gray">
                 <div class="login-wrapper">
                     <div class="container">
@@ -198,7 +174,6 @@ if (isset($_POST['reg'])) {
                                             <!-- Country dropdown -->
                                             <select id="country" class="form-control" name="country">
                                                 <option disabled="disabled" selected="selected">Country Code</option>
-
                                                 <?php foreach ($arrRegions as $region) {
                                                     echo "<option |value=" . $region . ">+" . $phoneUtil->getCountryCodeForRegion($region) . "</option>";
                                                 } ?>
@@ -206,9 +181,7 @@ if (isset($_POST['reg'])) {
                                             <!-- Phone number input -->
                                             <input type="text" id="phone" name="phone" class="form-control" placeholder="Your Phone*" minlength="10" maxlength="15" oninput="checkInput(this)">
                                             <span id="phone-error" class="error-message"></span>
-
                                         </div>
-
                                         <div class="form-group">
                                             <input type="text" name="address" class="form-control" placeholder="Your Address*" autocomplete="off">
                                         </div>
@@ -222,7 +195,6 @@ if (isset($_POST['reg'])) {
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="form-check-inline">
                                             <label class="form-check-label">
                                                 <input type="radio" class="form-check-input" name="utype" value="user" checked>User
@@ -238,21 +210,16 @@ if (isset($_POST['reg'])) {
                                                 <input type="radio" class="form-check-input" name="utype" value="builder">Builder
                                             </label>
                                         </div>
-
                                         <div class="form-group">
                                             <label class="col-form-label"><b>User Image*</b></label>
                                             <input class="form-control" name="uimage" type="file">
                                         </div>
-
                                         <button class="btn btn-primary" name="reg" value="Register" type="submit">Register</button>
-
                                     </form>
-
                                     <div class="login-or">
                                         <span class="or-line"></span>
                                         <span class="span-or">or</span>
                                     </div>
-
                                     <!-- Social Login -->
                                     <!-- <div class="social-login">
 									<span>Register with</span>
@@ -262,9 +229,7 @@ if (isset($_POST['reg'])) {
 									<a href="#" class="google"><i class="fab fa-instagram"></i></a>
 								</div> -->
                                     <!-- /Social Login -->
-
                                     <div class="text-center dont-have">Already have an account? <a href="login.php">Login</a></div>
-
                                 </div>
                             </div>
                         </div>
@@ -272,12 +237,9 @@ if (isset($_POST['reg'])) {
                 </div>
             </div>
             <!--	login  -->
-
-
             <!--	Footer   start-->
             <?php include("include/footer.php"); ?>
             <!--	Footer   start-->
-
             <!-- Scroll to top -->
             <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a>
             <!-- End Scroll To top -->
@@ -285,14 +247,11 @@ if (isset($_POST['reg'])) {
     </div>
     <script>
         const password = document.querySelector('input[type="password"]');
-
         password.addEventListener("focus", (event) => {
             event.target.style.background = "#f2f2f2";
         });
-
         password.addEventListener("blur", (event) => {
             event.target.style.background = "";
-
         });
     </script>
     <script>
@@ -306,11 +265,9 @@ if (isset($_POST['reg'])) {
                 button.innerHTML = '<i class="fa fa-eye"></i>';
             }
         }
-
         function checkInput(input) {
             // Remove non-numeric characters
             input.value = input.value.replace(/[^0-9]/g, '');
-
             // Check if the input contains any non-numeric characters
             if (input.value.match(/[^0-9]/)) {
                 // Display error message
@@ -324,7 +281,6 @@ if (isset($_POST['reg'])) {
         }
     </script>
     <!-- Wrapper End -->
-
     <!--	Js Link
 ============================================================-->
     <script src="js/jquery.min.js"></script>
@@ -340,10 +296,8 @@ if (isset($_POST['reg'])) {
     <script src="js/jquery.dependClass-0.1.js"></script>
     <script src="js/draggable-0.1.js"></script>
     <script src="js/jquery.slider.js"></script>
-
     <script src="js/wow.js"></script>
     <script src="js/custom.js"></script>
     <script src="numbervalidation.js"></script>
 </body>
-
-</html>
+/html>

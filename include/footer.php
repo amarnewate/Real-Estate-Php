@@ -8,11 +8,7 @@
                                     <div class="footer-widget mb-4">
                                         <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="images/logo/logo-white.png" alt="image"></a> </div>
                                         <p class="pb-10 text-white">Welcome to Homex Real Estate - Your Gateway to Affordable Luxury Living <p>
-                                        At Homex Real Estate, we believe that everyone deserves a place to call home. With decades of experience in the real estate industry, we specialize in creating vibrant communities that offer both comfort and affordability. Whether you're a first-time homebuyer, a growing family, or an investor seeking opportunities, Homex has the perfect solution for you.
-                                        </p></p>
-										<p class="pb-10 text-white">Affordable Housing: We understand the importance of homeownership and strive to make it accessible to everyone. Our range of affordable housing options caters to individuals and families of all sizes, ensuring that no one is left behind in the pursuit of their dream home.more.....
-
-                                        </P>
+                                        
                                         </div>
                                 </div>
                                 <div class="col-md-12 col-lg-8">
