@@ -482,12 +482,7 @@ $total_amount = $base_amount + $gst_amount;?>
 
 
         // Attach click event handler to the download button
-        $(document).ready(function() {
-            $('#downloadInvoiceButton').click(function() {
-                downloadInvoice();
-
-            });
-        });
+  
         function printNow() {
           window.print();
         }

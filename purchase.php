@@ -80,7 +80,7 @@ if (isset($_GET['pid'])) {
     $pid = $_GET['pid'];
 
     // Query to fetch property details by pid
-    $query = mysqli_query($con, "SELECT property.*, user.uname FROM property INNER JOIN user ON property.uid=user.uid WHERE property.pid='$pid'");
+    $query = mysqli_query($con, "SELECT property.*, user.uname, user.uemail , user.uphone FROM property INNER JOIN user ON property.uid=user.uid WHERE property.pid='$pid'");
     $property = mysqli_fetch_assoc($query);
 
     // Fetch user details based on the property owner's ID
