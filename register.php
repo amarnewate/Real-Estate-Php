@@ -37,8 +37,8 @@ if (isset($_POST['reg'])) {
             $error = "Phone number is not valid";
         } else {
             // If number is valid, proceed with form submission logic
-            // Your existing form submission logic goes here
-            // For example:
+
+
             $name = $_REQUEST['name'];
             $email = $_REQUEST['email'];
             $phone = $phoneWithCountryCode;
@@ -57,7 +57,10 @@ if (isset($_POST['reg'])) {
                 $error = "<p class='alert alert-warning'>Email Id or Phone Number already Exist</p> ";
             } else {
                 if (!empty($name) && !empty($email) && !empty($phone) && !empty($pass) && !empty($uimage)) {
-                    $sql = "INSERT INTO user (uname,uemail,uphone,uaddress,upass,utype,uimage) VALUES ('$name','$email','$phone','$address','$pass','$utype','$uimage')";
+                    // Hash the password
+                    $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
+
+                    $sql = "INSERT INTO user (uname,uemail,uphone,uaddress,upass,utype,uimage) VALUES ('$name','$email','$phone','$address','$hashed_password','$utype','$uimage')";
                     $result = mysqli_query($con, $sql);
                     move_uploaded_file($temp_name1, "admin/user/$uimage");
 
@@ -65,10 +68,10 @@ if (isset($_POST['reg'])) {
                         $msg = "<p class='alert alert-success'>Register Successfully</p> ";
                         // JavaScript code to redirect after 3 seconds
                         echo "<script>
-        setTimeout(() => {
-            window.location.href = 'login.php';
-        }, 3000);
-    </script>";
+            setTimeout(() => {
+                window.location.href = 'login.php';
+            }, 3000);
+        </script>";
                     } else {
                         $error = "<p class='alert alert-warning'>Register Not Successfully</p> ";
                     }
@@ -76,12 +79,12 @@ if (isset($_POST['reg'])) {
                     $error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
                 }
             }
-        }
     }
+}
 } else {
     // Clear error message if the form is not submitted
     $error = "";
-}
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">

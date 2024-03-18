@@ -5,26 +5,38 @@ $error="";
 $msg="";
 if(isset($_REQUEST['login']))
 {
-	$email=$_REQUEST['email'];
-	$pass=$_REQUEST['pass'];
-	if(!empty($email) && !empty($pass))
-	{
-		$sql = "SELECT * FROM user where uemail='$email' && upass='$pass'";
-		$result=mysqli_query($con, $sql);
-		$row=mysqli_fetch_array($result);
-		   if($row){
-				$_SESSION['uid']=$row['uid'];
-				$_SESSION['uemail']=$email;
-				header("location:index.php");
-		   }
-		   else{
-			   $error = "<p class='alert alert-warning'>Login Not Successfully</p> ";
-		   }
-	}else{
-		$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
-	}
+    $email=$_REQUEST['email'];
+    $pass=$_REQUEST['pass'];
+    if(!empty($email) && !empty($pass))
+    {
+        // Fetch the user record based on the provided email
+        $sql = "SELECT * FROM user where uemail='$email'";
+        $result=mysqli_query($con, $sql);
+        $row=mysqli_fetch_array($result);
+
+        if($row){
+            // Verify the password
+            if(password_verify($pass, $row['upass'])){
+                // Password is correct, set session variables and redirect
+                $_SESSION['uid']=$row['uid'];
+                $_SESSION['uemail']=$email;
+                header("location:index.php");
+            } else {
+                // Password is incorrect
+                $error = "<p class='alert alert-warning'>Incorrect email or password</p> ";
+            }
+        }
+        else{
+            // No user found with the provided email
+            $error = "<p class='alert alert-warning'>Incorrect email or password</p> ";
+        }
+    }else{
+        // Empty fields error
+        $error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
+    }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
