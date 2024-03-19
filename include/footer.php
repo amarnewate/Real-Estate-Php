@@ -8,7 +8,7 @@
                                     <div class="footer-widget mb-4">
                                         <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="images/logo/logo-white.png" alt="image"></a> </div>
                                         <p class="pb-10 text-white">Welcome to Homex Real Estate - Your Gateway to Affordable Luxury Living <p>
-                                        
+
                                         </div>
                                 </div>
                                 <div class="col-md-12 col-lg-8">
@@ -30,8 +30,7 @@
                                             <div class="footer-widget footer-nav mb-4">
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Quick Links</h4>
                                                 <ul class="hover-text-primary">
-                                                    <li><a href="#" class="text-white">About Us</a></li>
-                                                    <li><a href="#" class="text-white">Featured Property</a></li>
+                                                    <li><a href="about.php" class="text-white">About Us</a></li>
                                                     <li><a href="submitproperty.php" class="text-white">Submit Property</a></li>
                                                     <li><a href="#" class="text-white">How It Work</a></li>
                                                     <!-- <li><a href="#" class="text-white">Our Agents</a></li> -->
@@ -48,7 +47,7 @@
                                                     <li class="hover-text-primary"><i class="fas fa-envelope text-white mr-2 font-13 mt-1"></i>helpline@realestate.com</li>
                                                 </ul>
                                             </div>
-                                            <div class="footer-widget media-widget mt-4 text-white hover-text-primary"> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-google-plus-g"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fas fa-rss"></i></a> </div>
+
                                         </div>
                                     </div>
                                 </div>

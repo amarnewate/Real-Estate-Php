@@ -118,17 +118,17 @@ if (isset($_GET['pid'])) {
                 <h5 class="text-secondary hover-text-primary mb-2 text-capitalize">
                     <i class="fas fa-user text-primary mr-1"></i>
                     <a href="propertydetail.php?pid=<?php echo $property['pid']; ?>">
-                        <?php echo $property_user['uname']; ?>
+                        <?php echo $property['uname']; ?>
                     </a>
                 </h5>
                 <span class="location text-capitalize">
                     <i class="fas fa-map-marker-alt text-primary"></i>&nbsp;&nbsp;
-                    Email:<?php echo $property_user['uemail']; ?>
+                    Email:<?php echo $property['uemail']; ?>
                 </span>
                 <div class="pb-4 d-inline-block w-100">
                     <div class="text-capitalize">
                         <i class="fas fa-user text-primary mr-1"></i>&nbsp;&nbsp;
-                        Phone: <?php echo $property_user['uphone']; ?>
+                        Phone: <?php echo $property['uphone']; ?>
                     </div>
                     <div style="text-align: center;">
     <a class="btn btn-primary d-inline-block d-none" id="Purchase_property_btn" onclick="purchaseProperty(<?php echo $property['pid']; ?>)">Purchase</a>
@@ -310,15 +310,5 @@ setInterval(purchase_Time, 1000);
 purchase_Time();
 </script>
 
-</script>
-<script>
-// Get the email address
-var email = "<?php echo $property_user['uemail']; ?>";
-
-// Convert the email address to lowercase
-var lowercaseEmail = email.toLowerCase();
-
-// Update the displayed email address with the lowercase version
-document.write("Email: " + lowercaseEmail);
 </script>
 </html>
