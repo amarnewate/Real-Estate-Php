@@ -21,7 +21,7 @@ if (isset($_GET['query'])) {
         END AS invoice_label,
         GROUP_CONCAT(CONVERT_TZ(purchase_property.purchase_time, 'UTC', 'Asia/Kolkata') SEPARATOR ', ') AS ist_purchase_times
     FROM user
-    INNER JOIN purchase_property ON user.uid = user.uid
+    INNER JOIN purchase_property ON user.uid =purchase_property.user_uid
     LEFT JOIN property ON purchase_property.pid = property.pid
     WHERE user.uid = '$uid' AND (purchase_property.transaction_id LIKE '%$search_query%' OR purchase_property.invoicenumber LIKE '%$search_query%')
     GROUP BY property.pid");
@@ -34,7 +34,7 @@ if (isset($_GET['query'])) {
         END AS invoice_label,
         GROUP_CONCAT(CONVERT_TZ(purchase_property.purchase_time, 'UTC', 'Asia/Kolkata') SEPARATOR ', ') AS ist_purchase_times
     FROM user
-    INNER JOIN purchase_property ON user.uid = user.uid
+    INNER JOIN purchase_property ON user.uid = purchase_property.user_uid
     LEFT JOIN property ON purchase_property.pid = property.pid
     WHERE user.uid = '$uid'
     GROUP BY property.pid");
@@ -47,6 +47,11 @@ if (!$query) {
 // Continue with displaying the table
 // Check if any invoices are found
 if (mysqli_num_rows($query) > 0) {
+}else {
+    // No properties found, redirect to index.php with an alert
+    echo "<script>alert('No properties found.'); window.location='index.php';</script>";
+    exit();
+}
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -152,4 +157,4 @@ if (mysqli_num_rows($query) > 0) {
         </div>
     </body>
     </html>
-<?php } ?>
+<?php ?>
