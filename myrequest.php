@@ -135,8 +135,8 @@ mysqli_close($con);
             <tr>
                 <th>Request ID</th>
                 <th>Property ID</th>
-                <th>Requester Email</th>
-                <th>Requester Phone</th>
+                <th>Your Email</th>
+                <th>Your Phone</th>
                 <th>Message</th>
                 <th>Status</th>
             </tr>
