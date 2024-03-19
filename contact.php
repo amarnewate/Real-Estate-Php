@@ -110,9 +110,8 @@ if(isset($_POST['send']))
                                 <li class="d-flex mb-4"> <i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>
                                     <div class="contact-address">
                                         <h5 class="text-white">Address</h5>
-                                        <span class="text-secondary">Collins Street West, Victoria 8007, Australia</span>
-										<span class="text-secondary">Collins Street West, Victoria 8007, Australia</span>
-										</div>
+                                        <span class="text-secondary">homex Real Estate(India) Ltd. 127-128, B-wing, 1st Floor, Chintamani Plaza, Andheri-Kurla Road, Chakala, Opp. CineMagic Theatre. Andheri-E, Mumbai- 400099</span>
+
                                 </li>
                                 <li class="d-flex mb-4"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>
                                     <div class="contact-address">
