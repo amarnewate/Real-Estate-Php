@@ -99,7 +99,7 @@
 
           <h2>Contact Us</h2>
 
-          <p>If you have any questions or concerns about this Privacy Policy, please contact us at [homex@realestate.com].</p>
+          <p>If you have any questions or concerns about this Privacy Policy, please contact us at homex@realestate.com.</p>
 
           <p class="last-updated">Last Updated: [16-01-2024]</p>
      </div>
