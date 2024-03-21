@@ -3,7 +3,6 @@
 if(isset($_POST['pid'])) {
     // Retrieve PID from POST data
     $pid = $_POST['pid'];
-
     // Query to fetch property details based on the PID
     $query = mysqli_query($con, "SELECT property.*, user.uname, user.utype, user.uimage FROM property JOIN user ON property.uid=user.uid WHERE property.pid = '$pid'");
     $property = mysqli_fetch_array($query);
