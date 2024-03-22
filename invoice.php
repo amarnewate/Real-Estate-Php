@@ -372,8 +372,9 @@ LIMIT 1");
 
 while ($row = mysqli_fetch_array($query)) {
   ?>
-<div class="receipt-content">
+<div class="receipt-content"> <a href="index.php">Back</a>
     <div class="invoice-header">
+
         <h1>Invoice</h1>
     </div>
     <div class="invoice-details">
@@ -482,7 +483,7 @@ $total_amount = $base_amount + $gst_amount;?>
 
 
         // Attach click event handler to the download button
-  
+
         function printNow() {
           window.print();
         }
