@@ -104,7 +104,7 @@ if(isset($_POST['send']))
                 <div class="row">
                     <div class="col-lg-4 mb-5 bg-primary">
                         <div class="contact-info">
-                            <h3 class="mb-4 mt-4 text-white">Contacts</h3>
+                            <h3 class="mb-4 mt-4 text-white">Contact</h3>
 
                             <ul>
                                 <li class="d-flex mb-4"> <i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>
