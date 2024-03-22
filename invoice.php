@@ -392,25 +392,21 @@ while ($row = mysqli_fetch_array($query)) {
         </div>
         <div class="row mt-3">
             <div class="col-sm-6">
-                <span>User</span><br>
+                <span>From:</span><br>
                 <strong><?php echo $user['uname']; ?></strong><br>
                 <p><?php echo $user['uaddress']; ?><br>
-                    <a href="#">
-                        <span class="__cf_email__" data-cfemail="a4cecbcacaddc0c1c2c2e4c3c9c5cdc88ac7cbc9">[content&#160;protected]</span>
-                    </a>
                 </p>
             </div>
             <div class="col-sm-6 text-right">
-                <span>Payment To</span><br>
-                <strong>Homex Inc.</strong><br>
-                <p>
-                    Collins Street West<br>
-                    Victoria<br>
-                    8007,<br>
-                    Australia <br>
-                    <a href="#">
-                        <span class="__cf_email__" data-cfemail="711b04101f17140331161c10181d5f121e1c">[content&#160;protected]</span>
-                    </a>
+                <span>Payment To:</span><br>
+                <strong> Homex Real Estate(India) Inc</strong>
+               .<br>
+                127-128, B-wing, 1st Floor, <br>
+                Chintamani Plaza, Theatre.<br>
+                Andheri-Kurla Road, Chakala,<br>
+                Opp. CineMagic Andheri-E,<br>
+                  Mumbai- 400099 <br>
+
                 </p>
             </div>
         </div>
@@ -444,7 +440,7 @@ $gst_amount = ($base_amount * $gst_rate) / 100;
 $total_amount = $base_amount + $gst_amount;?>
     <div class="total">
         <p class="extra-notes">
-            Congratulations on your property purchase! We're thrilled to have you as a new homeowner. If you have any questions or need assistance, feel free to reach out to us. Thank you for choosing us as your trusted real estate partner. Wishing you many happy years in your new home!
+            Congratulations on your property purchase! We're thrilled to have you as a new homeowner.If you have any questions <br>or need assistance,  feel free to reach out to us. Thank you for choosing us as your trusted real estate partner.<br> Wishing you many happy years in your new home!
         </p>
         <div class="field">Subtotal <span>&#8377; <?php echo $row['price']; ?></span></div>
         <div class="field">GST <span>12%</span></div>
