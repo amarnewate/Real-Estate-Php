@@ -431,7 +431,7 @@ while ($row = mysqli_fetch_array($query)) {
 $base_amount = floatval($row['price']);
 
 // GST rate (percentage)
-$gst_rate = 12; // Example GST rate
+$gst_rate =12; // Example GST rate
 
 // Calculate GST amount
 $gst_amount = ($base_amount * $gst_rate) / 100;
@@ -462,24 +462,6 @@ $total_amount = $base_amount + $gst_amount;?>
 
     <!-- Your JavaScript code to generate and download the PDF -->
     <script>
-        // Function to generate and download the PDF invoice
-        async function downloadInvoice() {
-    var element = document.querySelector('.invoice-wrapper');
-    var opt = {
-        margin:       0.5,
-        filename:     'Invoice.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-
-    // Use html2pdf to generate PDF from HTML content
-    html2pdf().from(element).set(opt).save();
-}
-
-
-        // Attach click event handler to the download button
-
         function printNow() {
           window.print();
         }
