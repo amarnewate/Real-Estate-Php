@@ -19,8 +19,8 @@
                                                 <ul class="hover-text-primary">
                                                     <!-- <li><a href="#" class="text-white">Forum</a></li>
                                                     <li><a href="#" class="text-white">Statistics</a></li> -->
-                                                    <li><a href="#" class="text-white">Terms and Condition</a></li>
-                                                    <li><a href="#" class="text-white">Get Support</a></li>
+                                                    <!-- <li><a href="#" class="text-white">Terms and Condition</a></li> -->
+                                                    <li><a href="contact.php" class="text-white">Get Support</a></li>
                                                     <li><a href="q&a.php" class="text-white">Frequently Asked  Question</a></li>
                                                     <li><a href="contact.php" class="text-white">Contact</a></li>
                                                 </ul>
@@ -41,7 +41,7 @@
                                             <div class="footer-widget">
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Contact Us</h4>
                                                 <ul class="text-white">
-                                                    <li class="hover-text-primary"><i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>Collins Street West, Victoria 8007, Australia</li>
+                                                    <li class="hover-text-primary"><i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>Homex Real Estate(India) Inc. 127-128, B-wing, 1st Floor, Chintamani Plaza, Andheri-Kurla Road, Chakala, Opp. CineMagic Theatre. Andheri-E, Mumbai- 400099</li>
                                                     <li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>+91 9324493997</li>
 
                                                     <li class="hover-text-primary"><i class="fas fa-envelope text-white mr-2 font-13 mt-1"></i>helpline@realestate.com</li>
@@ -56,12 +56,12 @@
                     </div>
                 </div>
                 <div class="row copyright">
-                    <div class="col-sm-6"> <span class="text-white">© 2019-2024 Homex All right reserved</span> </div>
+                    <div class="col-sm-6"> <span class="text-white">©2024 All right reserved</span> </div>
                     <div class="col-sm-6">
                         <ul class="line-menu text-white hover-text-primary float-right">
                             <li><a href="privacy&policy.php">Privacy & Policy</a></li>
                             <li>|</li>
-                            <li><a href="#"> Site Map</a></li>
+                            <li><a> Site Map</a></li>
                         </ul>
                     </div>
                 </div>

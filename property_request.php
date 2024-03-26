@@ -36,33 +36,6 @@ mysqli_stmt_bind_param($stmtRequestsOnUserProperties, "ii", $loggedInUserId, $lo
 mysqli_stmt_execute($stmtRequestsOnUserProperties);
 $resultRequestsOnUserProperties = mysqli_stmt_get_result($stmtRequestsOnUserProperties);
 
-// // Output requests made on properties owned by the logged-in user
-// if (mysqli_num_rows($resultRequestsOnUserProperties) > 0) {
-//     echo "<h2>Requests for your properties:</h2>";
-//     echo "<table border='1'>";
-//     echo "<tr><th>Property ID</th><th>Requester Name</th><th>Requester Email</th><th>Requester Phone</th><th>Message</th><th>Owner Name</th><th>Owner Email</th><th>Owner Phone</th></tr>";
-//     while ($row = mysqli_fetch_assoc($resultRequestsOnUserProperties)) {
-//         echo "<tr>";
-//         echo "<td>" . $row["pid"] . "</td>";
-
-//         echo "<td>" . $row["requester_name"] . "</td>";
-//         echo "<td>" . $row["requester_email"] . "</td>";
-//         echo "<td>" . $row["requester_phone"] . "</td>";
-//         echo "<td>" . $row["message"] . "</td>";
-//         echo "<td>" . $row["owner_name"] . "</td>";
-//         echo "<td>" . $row["owner_email"] . "</td>";
-//         echo "<td>" . $row["owner_phone"] . "</td>";
-//         echo "<td><button class='action-button'>Buy</button></td>";
-//         echo "</tr>";
-
-//         echo "</tr>";
-//     }
-
-//     echo "</table>";
-// } else {
-//     echo "<h2>No requests for your properties.</h2>";
-// }
-
 
 // Close the statement
 mysqli_stmt_close($stmtRequestsOnUserProperties);
@@ -83,7 +56,7 @@ mysqli_close($con);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
@@ -133,7 +106,6 @@ mysqli_close($con);
     <?php
     // Output requests made on properties owned by the logged-in user
 if (mysqli_num_rows($resultRequestsOnUserProperties) > 0) {
-    echo "<h2>Recieved Property Query:</h2>";
     echo "<table border='1'>";
     echo "<tr><th>Property ID</th><th>Requester Name</th><th>Requester Email</th><th>Requester Phone</th><th>Message</th><th>Owner Name</th><th>Owner Email</th><th>Owner Phone</th><th>Status</th></tr>";
     while ($row = mysqli_fetch_assoc($resultRequestsOnUserProperties)) {

@@ -95,6 +95,7 @@
 <body>
 
     <div class="container">
+        <a href="index.php">Back</a>
         <h1>Recieved Property Query</h1>
         <div class="property-requests">
             <!-- Property requests will be displayed here -->

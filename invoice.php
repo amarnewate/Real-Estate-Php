@@ -412,7 +412,7 @@ FROM property
 INNER JOIN user ON property.uid = user.uid
 LEFT JOIN purchase_property ON property.pid = purchase_property.pid
 WHERE property.pid = '$pid'
-LIMIT 1");
+");
 
 
   while ($row = mysqli_fetch_array($query)) {
