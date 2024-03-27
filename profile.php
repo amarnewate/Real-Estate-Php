@@ -72,7 +72,7 @@ if(isset($_POST['insert']))
 <title>Real Estate Booking  Management System</title>
 </head>
 <body>
-
+<!--
 <!--	Page Loader
 =============================================================
 <div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
@@ -82,7 +82,7 @@ if(isset($_POST['insert']))
 	  </div>
 	</div>
 </div>
--->
+--> -->
 
 
 <div id="page-wrapper">
@@ -151,7 +151,7 @@ if(isset($_POST['insert']))
 									while($row=mysqli_fetch_array($query))
 									{
 								?>
-                                <div class="user-info mt-md-50"> <img src="admin/user/<?php echo $row['6'];?>" alt="userimage">
+                                <div class="user-info mt-md-50"> <img src="admin/user/<?php echo $row['uimage'];?>" alt="userimage">
                                     <div class="mb-4 mt-3">
 
                                     </div>
