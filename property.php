@@ -49,7 +49,7 @@ include("config.php");
 
     <!--	Title
 	=========================================================-->
-    <title>Homex - Real Estate Bookin Management System</title>
+    <title>Real Estate Bookin Management System</title>
 </head>
 
 <body>

@@ -132,7 +132,7 @@ if (isset($_POST['reg'])) {
     </style>
     <!--	Title
 	=========================================================-->
-    <title>Homex - Real Estate Template</title>
+    <title>Real Estate Booking Management System</title>
 </head>
 
 <body>
