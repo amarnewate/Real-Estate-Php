@@ -44,7 +44,7 @@ $user = mysqli_fetch_assoc($query_user);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Invoice</title>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
     .receipt-content .logo a:hover {
