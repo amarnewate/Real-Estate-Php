@@ -61,7 +61,6 @@
 
                                     </ul>
 
-
 									<a class="btn btn-primary d-none d-xl-block" href="submitproperty.php">Submit Peoperty</a>
                                 </div>
                             </nav>

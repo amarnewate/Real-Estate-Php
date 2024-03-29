@@ -15,6 +15,7 @@ $sqlUserPropertyRequests = "SELECT pr.id, pr.uid AS requester_id, pr.pid, u.uema
                             FROM property_requests pr
                             INNER JOIN user u ON pr.uid = u.uid
                             WHERE pr.uid = ?";
+                            
 $stmtUserPropertyRequests = mysqli_prepare($con, $sqlUserPropertyRequests);
 
 // Check if the statement was prepared successfully

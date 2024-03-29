@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
