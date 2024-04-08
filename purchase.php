@@ -118,17 +118,17 @@ if (isset($_GET['pid'])) {
                 <h5 class="text-secondary hover-text-primary mb-2 text-capitalize">
                     <i class="fas fa-user text-primary mr-1"></i>
                     <a href="propertydetail.php?pid=<?php echo $property['pid']; ?>">
-                        <?php echo $property['uname']; ?>
+                        <?php echo $property_user['uname']; ?>
                     </a>
                 </h5>
                 <span class="location text-capitalize">
                     <i class="fas fa-map-marker-alt text-primary"></i>&nbsp;&nbsp;
-                    Email:<?php echo $property['uemail']; ?>
+                    Email:<?php echo $property_user['uemail']; ?>
                 </span>
                 <div class="pb-4 d-inline-block w-100">
                     <div class="text-capitalize">
                         <i class="fas fa-user text-primary mr-1"></i>&nbsp;&nbsp;
-                        Phone: <?php echo $property['uphone']; ?>
+                        Phone: <?php echo $property_user['uphone']; ?>
                     </div>
                     <div style="text-align: center;">
     <a class="btn btn-primary d-inline-block d-none" id="Purchase_property_btn" onclick="purchaseProperty(<?php echo $property['pid']; ?>)">Purchase</a>
