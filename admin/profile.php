@@ -152,7 +152,7 @@ if(!isset($_SESSION['auser']))
 											<!-- /Account Status -->
 
 											<!-- Skills -->
-											<div class="card">
+											<!-- <div class="card">
 												<div class="card-body">
 													<h5 class="card-title d-flex justify-content-between">
 														<span>Skills </span>
@@ -169,7 +169,7 @@ if(!isset($_SESSION['auser']))
 														<span>ASP</span>
 													</div>
 												</div>
-											</div>
+											</div> -->
 											<!-- /Skills -->
 
 										</div>
