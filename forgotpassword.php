@@ -6,7 +6,7 @@ $email = $_POST['email'];
 $sql = "select * FROM user WHERE uemail = '{$email}'";
 
 // print($sql);
-// 
+//
 $result = mysqli_query($con, $sql);
 $rowcount=mysqli_num_rows($result);
 // print_r($rowcount);
