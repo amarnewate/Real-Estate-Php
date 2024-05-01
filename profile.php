@@ -65,15 +65,23 @@ if(isset($_POST['insert']))
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <style>
     .circular-image {
-    border-radius: 50%; /* This will create a circular clipping effect */
-    width: 100px; /* Adjust the width and height as needed */
-    height: 100px;
-}
+	width: 50%;
+	height: auto;
+	max-width: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+ }
+ .circular-image img {
+
+	border-radius: 50%;
+	 }
 
 </style>
+
 <!--	Title
 	=========================================================-->
 <title>Real Estate Booking  Management System</title>

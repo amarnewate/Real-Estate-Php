@@ -2970,9 +2970,4 @@ form.subscribe {
 .comming-soon .bg-shape {
 	display: none
 }
-}.circular-image {
-	width: 50%;
-	height: auto;
-	max-width: 100%;
-	border-radius: 80%;
-	object-fit: cover; }
+}
