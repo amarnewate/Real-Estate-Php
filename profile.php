@@ -66,7 +66,14 @@ if(isset($_POST['insert']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
+<style>
+    .circular-image {
+    border-radius: 50%; /* This will create a circular clipping effect */
+    width: 100px; /* Adjust the width and height as needed */
+    height: 100px;
+}
 
+</style>
 <!--	Title
 	=========================================================-->
 <title>Real Estate Booking  Management System</title>
@@ -151,10 +158,10 @@ if(isset($_POST['insert']))
 									while($row=mysqli_fetch_array($query))
 									{
 								?>
-                                <div class="user-info mt-md-50"> <img src="admin/user/<?php echo $row['uimage'];?>" alt="userimage">
-                                    <div class="mb-4 mt-3">
+                               <div class="user-info mt-md-50">
+    <img src="admin/user/<?php echo $row['uimage'];?>" alt="userimage" class="circular-image">
+</div>
 
-                                    </div>
 
                                     <div class="font-18">
                                         <div class="mb-1 text-capitalize"><b>Name:</b> <?php echo $row['1'];?></div>
